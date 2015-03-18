@@ -3,7 +3,7 @@ exec { "apt-get update":
 }
 exec { "apt-get upgrade":
   path => "/usr/bin",
-  require => Ecec["apt-get update"],
+  require => Exec["apt-get update"],
 }
 package { "apache2":
   ensure  => present,
