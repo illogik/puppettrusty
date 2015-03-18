@@ -2,7 +2,8 @@ exec { "apt-get update":
   path => "/usr/bin",
 }
 exec { "apt-get upgrade":
-  path => "/usr/bin".
+  path => "/usr/bin",
+  require => Ecec["apt-get update"],
 }
 package { "apache2":
   ensure  => present,
