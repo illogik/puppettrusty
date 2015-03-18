@@ -1,8 +1,9 @@
 exec { "apt-get update":
-  path => "/usr/bin",
+  command => "/usr/bin/apt-get update",
+  refreshonly => true,
 }
 exec { "apt-get upgrade":
-  path => "/usr/bin",
+  command => "/usr/bin/apt-get upgrade",
   require => Exec["apt-get update"],
 }
 package { "apache2":
